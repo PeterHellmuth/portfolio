@@ -28,5 +28,5 @@ jobs:
             cd ~/portfolio
             git pull origin main
             git status
-            npm install --only=prod
-            pm2 restart portfolio
+            npm install --omit=dev
+            pm2 restart ./bin/www
