@@ -30,5 +30,5 @@ jobs:
             git status
             sudo docker compose down
             sudo docker build -t nextjs .
-            sudo docker build -t nginx .
+            sudo docker build -t nginx ./nginx
             sudo docker compose up
