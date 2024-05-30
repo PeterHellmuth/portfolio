@@ -28,6 +28,6 @@ jobs:
             cd ~/portfolio
             git pull origin main
             git status
-            docker build -t nextjs
-            docker build -t nginx
-            docker compose up
+            sudo docker build -t nextjs
+            sudo docker build -t nginx
+            sudo docker compose up
