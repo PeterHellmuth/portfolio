@@ -1,6 +1,6 @@
 # Basic workflow
 
-name: Node.js CD
+name: Docker CD
 
 # Controls when the action will run.
 on:
@@ -28,5 +28,6 @@ jobs:
             cd ~/portfolio
             git pull origin main
             git status
-            npm install --omit=dev
-            pm2 restart ./bin/www
+            docker build -t nextjs
+            docker build -t nginx
+            docker compose up
