@@ -7,12 +7,10 @@ services:
     environment:
       - NODE_ENV=production
     restart: always
-  inventory-application:
+  test-application:
     build:
-      context: ../inventory-application
-    container_name: inventory-application
-    environment:
-      - MONGOOSE_PASS=${MONGOOSE_PASS}
+      context: ../test-application
+    container_name: test-application
     ports:
       - "5173:5173"
     restart: always
@@ -29,4 +27,4 @@ services:
     restart: always
     depends_on:
       - nextjs
-      - inventory-application
+      - test-application
