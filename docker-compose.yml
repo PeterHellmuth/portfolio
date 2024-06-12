@@ -28,4 +28,4 @@ services:
     restart: always
     depends_on:
       - nextjs
-      - test-application
+      - inventory-application
