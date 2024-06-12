@@ -2,17 +2,18 @@ services:
   nextjs:
     build: .
     container_name: nextjs
-    ports:
-      - "3000:3000"
     environment:
       - NODE_ENV=production
     restart: always
-  test-application:
+  inventory-application-client:
     build:
-      context: ../test-application
-    container_name: test-application
-    ports:
-      - "5173:5173"
+      context: ../inventory-application/client
+    container_name: inventory-application-client
+    restart: always
+  inventory-application:
+    build:
+      context: ../inventory-application
+    container_name: inventory-application
     restart: always
   nginx:
     build:
