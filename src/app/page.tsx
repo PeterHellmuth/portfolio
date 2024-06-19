@@ -4,10 +4,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
-        <a href="https://www.peterhellmuth.com/test-application">
-          test-application
+        <a href="https://www.peterhellmuth.com/inventory-application">
+          inventory application
         </a>{" "}
-        test link
+        docker container routing test
       </div>
     </main>
   );
