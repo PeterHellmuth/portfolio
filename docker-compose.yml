@@ -5,11 +5,6 @@ services:
     environment:
       - NODE_ENV=production
     restart: always
-  inventory-application-client:
-    build:
-      context: ../inventory-application/client
-    container_name: inventory-application-client
-    restart: always
   inventory-application:
     build:
       context: ../inventory-application
