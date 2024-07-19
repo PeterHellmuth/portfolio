@@ -11,6 +11,9 @@ services:
     container_name: inventory-application
     environment:
       MONGOOSE_PASS: ${MONGOOSE_PASS}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      CONTACT_EMAIL: ${CONTACT_EMAIL}
     restart: always
   nginx:
     build:
