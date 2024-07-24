@@ -10,6 +10,7 @@ on:
 
 jobs:
   deploy_image:
+    name: Update images and config on EC2 instance
     runs-on: ubuntu-latest
 
     if: github.event.pull_request.merged == true
@@ -26,6 +27,15 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           source: "docker-compose.yml"
           target: "~/deploy/"
+
+      - name: Copy Nginx config file to server
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          source: "nginx/nginx.conf"
+          target: "~/deploy/nginx/"
 
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
