@@ -21,7 +21,7 @@ export default function ProjectCard({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="flex flex-col gap-1 border rounded-md overflow-hidden shadow-lg">
+    <div className="flex flex-col gap-1 border rounded-md overflow-hidden shadow-lg p-1 sm:p-5">
       <div className="flex flex-col items-center">
         <Image
           src={imageSrc}
@@ -37,7 +37,7 @@ export default function ProjectCard({
       <div>
         {preview}{" "}
         <div
-          className={`max-w-80 duration-800 ease-in-out overflow-hidden ${
+          className={`max-w-80 duration-800 transition-max-height ease-in-out overflow-hidden ${
             isExpanded ? "max-h-96" : "max-h-0"
           }`}
         >
