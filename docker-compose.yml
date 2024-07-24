@@ -1,13 +1,10 @@
 services:
   nextjs:
-    build: .
+    image: peterhellmuth/portfolio-nextjs:latest
     container_name: nextjs
-    environment:
-      - NODE_ENV=production
     restart: always
   inventory-application:
-    build:
-      context: ../inventory-application
+    image: peterhellmuth/portfolio-inventory-application:latest
     container_name: inventory-application
     environment:
       MONGOOSE_PASS: ${MONGOOSE_PASS}
@@ -16,8 +13,7 @@ services:
       CONTACT_EMAIL: ${CONTACT_EMAIL}
     restart: always
   nginx:
-    build:
-      context: ./nginx
+    image: peterhellmuth/portfolio-nginx:latest
     container_name: nginx
     ports:
       - "80:80"
@@ -27,6 +23,3 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ../ssl:/etc/nginx/ssl:ro
     restart: always
-    depends_on:
-      - nextjs
-      - inventory-application
