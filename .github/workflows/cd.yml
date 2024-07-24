@@ -10,6 +10,7 @@ on:
 
 jobs:
   deploy_image:
+    name: Update images and config on EC2 instance
     runs-on: ubuntu-latest
 
     if: github.event.pull_request.merged == true
@@ -33,7 +34,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "/nginx/nginx.conf"
+          source: "./nginx/nginx.conf"
           target: "~/deploy/nginx/"
 
       - name: Deploy using ssh
