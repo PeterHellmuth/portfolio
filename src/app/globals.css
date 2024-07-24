@@ -6,9 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 240, 240, 240;
   --background-end-rgb: 255, 255, 255;
-  line-height: 1.75;
-  font-size: 1.25em;
+  line-height: 1;
+  font-size: 1em;
   font-family: sans-serif;
+}
+
+@media (min-width: 640px) {
+  :root {
+    line-height: 1.75;
+    font-size: 1.25em;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
