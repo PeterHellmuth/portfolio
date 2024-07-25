@@ -34,9 +34,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          source: "nginx/nginx.conf"
-          target: "~/deploy/nginx/"
-          strip_components: 1
+          source: "./nginx/nginx.conf"
+          target: "~/deploy/"
 
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
